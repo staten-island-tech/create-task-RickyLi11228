@@ -9,7 +9,7 @@ elif int(randomnumber) == 2:
 elif int(randomnumber) == 3:
     response = "Scissors"
 def rps():
-   Input = input("Rock Paper or Scissors?: ")
+   Input = input("Rock Paper or Scissors?: 💋 ")
    Input = Input.lower()
    if Input == "rock" and response == "Paper":
        print("You lose")
@@ -33,10 +33,10 @@ def rps():
        print("You draw")
        list.append("draw")
    else:
-       print("Error")
+       print("Error, check your spelling")
    print(response)
 continue_play = input("Would you like to keep playing? Y/N 💖 ")
 while continue_play.upper() == "Y":
     rps()
     continue_play = input("Would you like to keep playing? Y/N 💖 ")
-print("Your history:",list)
+print("Your history 🤓🤓🤓 :",list)
