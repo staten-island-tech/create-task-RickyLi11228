@@ -1,20 +1,42 @@
 import random
-guess_history = []
-guess = int(input("Pick a number between 1 and 100000 "))
-guess_history.append(guess)
-randomnumber = int(random.randrange(1,100000))
-while guess != randomnumber: 
-    if int(guess) > randomnumber:
-        print("Lower")
-        guess = input("Pick a different number ")
-        guess_history.append(guess)
-    elif int(guess) < randomnumber:
-        print("Higher")
-        guess = input("Pick a different number ")
-        guess_history.append(guess)
-    else:
-        break
-print("Correct!")
-print("Your guess history:")
-for guess in guess_history:
-   print(guess)
+response = 0
+list = []
+randomnumber = int(random.randrange(1,3))
+if int(randomnumber) == 1:
+    response = "Rock"
+elif int(randomnumber) == 2:
+    response = "Paper"
+elif int(randomnumber) == 3:
+    response = "Scissors"
+def rps():
+   Input = input("Rock Paper or Scissors?: ")
+   Input = Input.lower()
+   if Input == "rock" and response == "Paper":
+       print("You lose")
+       list.append("lose")
+   elif Input == "scissors" and response == "Paper":
+       print("You won")
+       list.append("win")
+   elif Input == "rock" and response == "Scissors":
+       print("You won")
+       list.append("win")
+   elif Input == "paper" and response == "Scissors":
+       print("You lost")
+       list.append("lose")
+   elif Input == "paper" and response == "Rock":
+       print("You won")
+       list.append("win")
+   elif Input == "scissors" and response == "Rock":
+       print("You lost")
+       list.append("lose")
+   elif Input == response.lower():
+       print("You draw")
+       list.append("draw")
+   else:
+       print("Error")
+   print(response)
+continue_play = input("Would you like to keep playing? Y/N 💖 ")
+while continue_play.upper() == "Y":
+    rps()
+    continue_play = input("Would you like to keep playing? Y/N 💖 ")
+print("Your history:",list)
