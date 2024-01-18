@@ -11,31 +11,19 @@ elif int(randomnumber) == 3:
 def rps():
    Input = input("Rock Paper or Scissors?: 💋 ")
    Input = Input.lower()
-   if Input == "rock" and response == "Paper":
+   if Input == "rock" and response == "Paper" or Input == "paper" and response == "Scissors" or Input == "scissors" and response == "Rock":
        print("You lose")
        list.append("lose")
-   elif Input == "scissors" and response == "Paper":
+   elif Input == "scissors" and response == "Paper" or Input == "rock" and response == "Scissors" or Input == "paper" and response == "Rock":
        print("You won")
        list.append("win")
-   elif Input == "rock" and response == "Scissors":
-       print("You won")
-       list.append("win")
-   elif Input == "paper" and response == "Scissors":
-       print("You lost")
-       list.append("lose")
-   elif Input == "paper" and response == "Rock":
-       print("You won")
-       list.append("win")
-   elif Input == "scissors" and response == "Rock":
-       print("You lost")
-       list.append("lose")
    elif Input == response.lower():
        print("You draw")
        list.append("draw")
    else:
        print("Error, check your spelling")
    print(response)
-continue_play = input("Would you like to keep playing? Y/N 💖 ")
+continue_play = "Y"
 while continue_play.upper() == "Y":
     rps()
     continue_play = input("Would you like to keep playing? Y/N 💖 ")
