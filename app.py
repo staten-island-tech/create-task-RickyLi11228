@@ -1,13 +1,6 @@
 import random
 response = 0
 list = []
-randomnumber = int(random.randrange(1,3))
-if int(randomnumber) == 1:
-    response = "Rock"
-elif int(randomnumber) == 2:
-    response = "Paper"
-elif int(randomnumber) == 3:
-    response = "Scissors"
 def rps():
    Input = input("Rock Paper or Scissors?: 💋 ")
    Input = Input.lower()
@@ -25,6 +18,13 @@ def rps():
    print(response)
 continue_play = "Y"
 while continue_play.upper() == "Y":
+    randomnumber = int(random.randrange(1,3))
+    if int(randomnumber) == 1:
+        response = "Rock"
+    elif int(randomnumber) == 2:
+        response = "Paper"
+    elif int(randomnumber) == 3:
+        response = "Scissors"
     rps()
     continue_play = input("Would you like to keep playing? Y/N 💖 ")
 print("Your history 🤓🤓🤓 :",list)
