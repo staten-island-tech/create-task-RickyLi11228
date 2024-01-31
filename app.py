@@ -18,7 +18,7 @@ def rps():
    print(response)
 continue_play = "Y"
 while continue_play.upper() == "Y":
-    randomnumber = int(random.randrange(1,3))
+    randomnumber = int(random.randrange(1,4))
     if int(randomnumber) == 1:
         response = "Rock"
     elif int(randomnumber) == 2:
