@@ -2,7 +2,7 @@ import random
 response = 0
 list = []
 def rps():
-   Input = input("Rock Paper or Scissors?: 💋 ")
+   Input = input("Rock Paper or Scissors?: 🗿,🧻,✂ ")
    Input = Input.lower()
    if Input == "rock" and response == "Paper" or Input == "paper" and response == "Scissors" or Input == "scissors" and response == "Rock":
        print("You lose")
