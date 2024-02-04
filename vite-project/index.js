@@ -17,26 +17,26 @@ DOMSelectors.button.addEventListener("click", function() {
     let response;
     const randomnumber = Math.floor(Math.random() * 3) + 1;
     if (randomnumber === 1) {
-        response = "rock";
+        response = "Rock";
     } else if (randomnumber === 2) {
-        response = "paper";
+        response = "Paper";
     } else if (randomnumber === 3) {
-        response = "scissors";
+        response = "Scissors";
     }
     const userChoice = DOMSelectors.input.value.toLowerCase();
-    if ((userChoice === 'rock' && response === 'paper') ||
-        (userChoice === 'paper' && response === 'scissors') ||
-        (userChoice === 'scissors' && response === 'rock')) {
+    if ((userChoice === 'rock' && response === 'Paper') ||
+        (userChoice === 'paper' && response === 'Scissors') ||
+        (userChoice === 'scissors' && response === 'Rock')) {
         print('You lose');
-        array.push('lost');
-    } else if ((userChoice === 'scissors' && response === 'paper') ||
-        (userChoice === 'rock' && response === 'scissors') ||
-        (userChoice === 'paper' && response === 'rock')) {
+        array.push(' Lost');
+    } else if ((userChoice === 'scissors' && response === 'Paper') ||
+        (userChoice === 'rock' && response === 'Scissors') ||
+        (userChoice === 'paper' && response === 'Rock')) {
         print('You won');
-        array.push('win');
-    } else if (userChoice === response) {
+        array.push(' Win');
+    } else if (userChoice === response.toLowerCase()) {
         print('You draw');
-        array.push('tie');
+        array.push(' Tie');
     } else {
         print('Error, check your spelling');
     }
@@ -44,6 +44,6 @@ DOMSelectors.button.addEventListener("click", function() {
     DOMSelectors.input.value = "";
 });
 DOMSelectors.history.addEventListener("click", function() {
-    print("Your history 🤓🤓🤓 :")
+    print("Your history: ")
     print(array)
 })
