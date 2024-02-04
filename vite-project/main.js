@@ -9,6 +9,9 @@ function print(thing){
     DOMSelectors.form.insertAdjacentHTML("beforeend",
      `<div>${thing}</div>`);
 }
+DOMSelectors.form.addEventListener("submit", function(event) {
+    event.preventDefault();
+});
 DOMSelectors.button.addEventListener("click", function() {
     let response;
     const randomnumber = Math.floor(Math.random() * 3) + 1;
