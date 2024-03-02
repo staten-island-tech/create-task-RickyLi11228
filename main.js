@@ -12,8 +12,11 @@ function print(thing){
 DOMSelectors.form.addEventListener("submit", function(event) {
     event.preventDefault();
 });
-
 DOMSelectors.button.addEventListener("click", function() {
+    const userChoice = DOMSelectors.input.value.toLowerCase();
+    function appender(){
+        array.push(`(${outcome}) You used: ${userChoice}, Computer used: ${response}`);
+    }
     let response;
     const randomnumber = Math.floor(Math.random() * 3) + 1;
     if (randomnumber === 1) {
@@ -23,25 +26,30 @@ DOMSelectors.button.addEventListener("click", function() {
     } else if (randomnumber === 3) {
         response = "Scissors";
     }
-    const userChoice = DOMSelectors.input.value.toLowerCase();
-    if ((userChoice === 'rock' && response === 'Paper') ||
-        (userChoice === 'paper' && response === 'Scissors') ||
-        (userChoice === 'scissors' && response === 'Rock')) {
-        print('You lose');
-        array.push(' Lost');
-    } else if ((userChoice === 'scissors' && response === 'Paper') ||
-        (userChoice === 'rock' && response === 'Scissors') ||
-        (userChoice === 'paper' && response === 'Rock')) {
+    function results (you, computer){
+    if ((you === 'rock' && computer === 'Paper') ||
+        (you === 'paper' && computer === 'Scissors') ||
+        (you === 'scissors' && computer === 'Rock')) {
+        print('You lost')
+        outcome = "Lose"
+        appender();
+    } else if ((you === 'scissors' && computer === 'Paper') ||
+        (you === 'rock' && computer === 'Scissors') ||
+        (you === 'paper' && computer === 'Rock')) {
         print('You won');
-        array.push(' Win');
-    } else if (userChoice === response.toLowerCase()) {
+        outcome = "Win"
+        appender();
+    } else if (you === computer.toLowerCase()) {
         print('You draw');
-        array.push(' Tie');
+        outcome = "Draw"
+        appender();
     } else {
         print('Error, check your spelling');
     }
     print(response)
     DOMSelectors.input.value = "";
+}
+    results(userChoice, response);
 });
 DOMSelectors.history.addEventListener("click", function() {
     print("Your history: ")
