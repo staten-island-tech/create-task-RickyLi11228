@@ -12,7 +12,6 @@ function print(thing){
 DOMSelectors.form.addEventListener("submit", function(event) {
     event.preventDefault();
 });
-DOMSelectors.button.addEventListener("click", function() {
     const userChoice = DOMSelectors.input.value.toLowerCase();
     function appender(){
         array.push(`(${outcome}) You used: ${userChoice}, Computer used: ${response}`);
@@ -49,6 +48,7 @@ DOMSelectors.button.addEventListener("click", function() {
     print(response)
     DOMSelectors.input.value = "";
 }
+DOMSelectors.button.addEventListener("click", function() {
     results(userChoice, response);
 });
 DOMSelectors.history.addEventListener("click", function() {
